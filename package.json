@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es5",
+    "lib": [
+      "es2015.promise"
+    ]
+  },
+  "dependencies": {
+    "mithril": "^2.0.4",
+    "mithril-tsx-component": "^3.0.1",
+    "nprogress": "^0.2.0",
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/mithril": "github:MithrilJS/mithril.d.ts#next"
+  },
+  "name": "TRPG-Mithril",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack ./src/script/index.js --output-path bin --output-filename app.js --watch --mode development",
+    "build": "webpack  ./src/script/index.js --output-path bin --output-filename app.js --watch --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "TRPG-Mithril": "app.js"
+  },
+  "description": ""
+}
