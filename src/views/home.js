@@ -69,13 +69,14 @@ module.exports = {
                         m("input", {
                             type: "checkbox",
                             onchange: function () {
+                                debugger
                                 if ($(this)[0].checked) {
                                     home.armorBonus = 5
-                                    $("#evasion").val(parseInt($("#evasion").val() + home.armorBonus))
-                                    $("#armor").val(parseInt($("#armor").val() + home.armorBonus))
+                                    $("#evasion").val(parseInt($("#evasion").val(), 10) + parseInt(home.armorBonus, 10))
+                                    $("#armor").val(parseInt($("#armor").val(), 10) + parseInt(home.armorBonus, 10))
                                 } else {
-                                    $("#evasion").val(parseInt($("#evasion").val() - home.armorBonus))
-                                    $("#armor").val(parseInt($("#armor").val() - home.armorBonus))
+                                    $("#evasion").val(parseInt($("#evasion").val(), 10) - parseInt(home.armorBonus, 10))
+                                    $("#armor").val(parseInt($("#armor").val(), 10) - parseInt(home.armorBonus, 10))
                                     home.armorBonus = 0
                                 }
                             }
@@ -87,11 +88,11 @@ module.exports = {
                             onchange: function () {
                                 if ($(this)[0].checked) {
                                     home.traitsBonus = 2
-                                    $("#evasion").val(parseInt($("#evasion").val() + home.armorBonus))
-                                    $("#armor").val(parseInt($("#armor").val() + home.armorBonus))
+                                    $("#evasion").val(parseInt($("#evasion").val(), 10) + parseInt(home.traitsBonus, 10))
+                                    $("#armor").val(parseInt($("#armor").val(), 10) + parseInt(home.traitsBonus, 10))
                                 } else {
-                                    $("#evasion").val(parseInt($("#evasion").val() - home.armorBonus))
-                                    $("#armor").val(parseInt($("#armor").val() - home.armorBonus))
+                                    $("#evasion").val(parseInt($("#evasion").val(), 10) - parseInt(home.traitsBonus, 10))
+                                    $("#armor").val(parseInt($("#armor").val(), 10) - parseInt(home.traitsBonus, 10))
                                     home.traitsBonus = 0
                                 }
                             }
@@ -114,7 +115,7 @@ module.exports = {
                                         case 'strength':
                                             $("#vitality").val(3 + parseInt(event.target.value != "" ? event.target.value : 0, 10));
                                             break;
-                                        case 'dexterity':                                            
+                                        case 'dexterity':
                                             $("#evasion").val(10 + home.armorBonus + home.traitsBonus +
                                                 parseInt(event.target.value != "" ? event.target.value : 0, 10));
                                             $("#armor").val(10 + home.armorBonus + home.traitsBonus +
