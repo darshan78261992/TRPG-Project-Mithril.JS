@@ -4,9 +4,11 @@ Used Mithril.JS
 
 # To run application 
 
- - npm start
+ - npm start 
  - open index.html file.
-
+ - webpack package added to compile the application
+ - to build appplication for production 
+    -   npm build
 
 # Test Point Completed
   1. Show all attributes
